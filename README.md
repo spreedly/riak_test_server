@@ -13,6 +13,14 @@ the Riak backend inbetween tests.
 * A hostname of `docker` mapped to the IP of your container host (192.168.42.43 for dvm)
 * At least 1Gb available to the docker VM. The base Erlang runtime seems to be a bit of a memory hog. (`export DOCKER_MEMORY=1024` for dvm)
 
+## Testing
+
+```bash
+$ VERSION=2.1 bundle exec rake test
+```
+
+You may see a `Node 'riak@127.0.0.1' not responding to pings.` message - I have found this to be a red-herring.
+
 ## Installation
 
 Add this line to your application's Gemfile and `bundle`:
