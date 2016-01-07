@@ -5,6 +5,6 @@ class RiakTestServer213Test < Minitest::Test
   include RiakTestServerTests
 
   def version
-    "2.1.3"
+    "2.1"
   end
 end

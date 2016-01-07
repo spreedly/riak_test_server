@@ -26,10 +26,10 @@ VERSIONS = {
   "1.3" => "http://s3.amazonaws.com/downloads.basho.com/riak/1.3/1.3.2/ubuntu/precise/riak_1.3.2-1_amd64.deb",
   "1.4" => "http://s3.amazonaws.com/downloads.basho.com/riak/1.4/1.4.10/ubuntu/precise/riak_1.4.10-1_amd64.deb",
   "2.0" => "http://s3.amazonaws.com/downloads.basho.com/riak/2.0/2.0.0rc1/ubuntu/precise/riak_2.0.0rc1-1_amd64.deb",
-  "2.1.3" => "http://s3.amazonaws.com/downloads.basho.com/riak/2.1/2.1.3/ubuntu/precise/riak_2.1.3-1_amd64.deb"
+  "2.1" => "http://s3.amazonaws.com/downloads.basho.com/riak/2.1/2.1.3/ubuntu/precise/riak_2.1.3-1_amd64.deb"
 }
 
-LATEST = "2.1.3"
+LATEST = "2.1"
 
 task :build do
   abort "No VERSION specified" unless ENV["VERSION"]
