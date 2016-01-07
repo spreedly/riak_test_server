@@ -21,6 +21,23 @@ $ VERSION=2.1 bundle exec rake test
 
 You may see a `Node 'riak@127.0.0.1' not responding to pings.` message - I have found this to be a red-herring.
 
+## Building
+
+When you want to add support for a new version, or update an existing one, you need to build, tag, and push the docker image up to the [Docker Hub](https://hub.docker.com/r/ntalbott/riak_test_server/). The docker images are still tied to @ntalbott's Docker account even though the source repo is in Spreedly's Github account (two separate systems).
+
+So, basically, ask @ntalbott to run the following command for a single version:
+
+```bash
+$ VERSION=2.1 bundle exec rake push
+```
+
+Or to push up new images for all versions:
+
+```bash
+$ bundle exec rake push_all
+```
+
+
 ## Installation
 
 Add this line to your application's Gemfile and `bundle`:
