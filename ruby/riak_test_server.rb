@@ -122,7 +122,10 @@ module RiakTestServer
 
     def attach
       unless @console_io
-        @console_io = IO.popen([@docker_bin, "attach", @container_name], "r+", err: :out).tap{|io| io.sync = true}
+        @console_io = IO.popen([@docker_bin, "attach", @container_name], "r+", err: :out).tap do |io|
+          io.sync = true
+          io.set_encoding(Encoding::ASCII_8BIT)
+        end
         @console_io.puts("ok.")
         unless @console_io.expect(PROMPT, 60)
           raise "Unable to get a prompt on the console: @console_io.read"

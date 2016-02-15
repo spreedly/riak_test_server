@@ -1,3 +1,7 @@
+# 1.1.3
+
+* Fix "invalid byte sequence in UTF-8" error.
+
 # 1.1.2
 
 * Increase container communication timeout.

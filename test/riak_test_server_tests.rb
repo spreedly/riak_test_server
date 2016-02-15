@@ -16,12 +16,16 @@ module RiakTestServerTests
     assert_equal "not found", Excon.get(get_url("1")).body.chomp
   end
 
+  def docker_host
+    ENV["DOCKER_HOST"].split("//").last
+  end
+
   def put_url(key)
-    "http://docker:8098/buckets/a/keys/#{key}"
+    "http://#{docker_host}/buckets/a/keys/#{key}"
   end
 
   def get_url(key)
-    "http://docker:8098/buckets/a/keys/#{key}?r=1"
+    "http://#{docker_host}/buckets/a/keys/#{key}?r=1"
   end
 
   def server_options
